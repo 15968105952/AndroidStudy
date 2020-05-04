@@ -50,6 +50,12 @@
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+        <!-- 反射 -->
+        <activity
+            android:name=".activity.reflex.ReflexActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
