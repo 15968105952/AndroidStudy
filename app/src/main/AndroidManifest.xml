@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lahm.learndaemon">
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -8,8 +9,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 需要得到用户授权，允许使用通知 -->
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
-
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,30 +20,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--铃声-->
-        <activity android:name=".activity.RingActivity"
+        <!-- 铃声 -->
+        <activity
+            android:name=".activity.RingActivity"
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            ></activity>
-        <!--闹钟-->
-        <activity android:name=".activity.AlarmClockActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 闹钟 -->
+        <activity
+            android:name=".activity.AlarmClockActivity"
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            ></activity>
-        <!--AIDL-->
-        <activity android:name=".activity.AidlActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- AIDL -->
+        <activity
+            android:name=".activity.AidlActivity"
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            ></activity>
-        <!--JNI-->
-        <activity android:name=".activity.JniActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- JNI -->
+        <activity
+            android:name=".activity.JniActivity"
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            ></activity>
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 断点续传 -->
+        <activity
+            android:name=".activity.breakpointresume.BreakpointResumeActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,7 +82,6 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name=".receiver.Restarter"
             android:enabled="true"
@@ -111,23 +119,21 @@
         <service
             android:name=".nls.NLSProtectService"
             android:process=":nls_service" />
-
         <service
             android:name=".service.YourService"
-            android:enabled="true"></service>
+            android:enabled="true" />
 
-        <receiver android:name=".receiver.RingReceiver"
+        <receiver
+            android:name=".receiver.RingReceiver"
             android:enabled="true"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.example.android27_zhangkai_alarm_notification.RING"></action>
+                <action android:name="com.example.android27_zhangkai_alarm_notification.RING" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".receiver.MyReceiver">
             <intent-filter>
-                <action android:name="SendNotify"></action>
+                <action android:name="SendNotify" />
             </intent-filter>
         </receiver>
     </application>

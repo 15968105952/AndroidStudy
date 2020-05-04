@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.lahm.learndaemon.R;
+import com.lahm.learndaemon.activity.breakpointresume.BreakpointResumeActivity;
 import com.lahm.learndaemon.adapter.TextTagAdapter;
 import com.lahm.learndaemon.entity.ImpressTagEntity;
 import com.lahm.learndaemon.view.TagFlowLayout;
@@ -65,6 +66,8 @@ public class MainActivity extends BaseActivity {
         classes.add(AlarmClockActivity.class);
         list.add("JNI开发");
         classes.add(JniActivity.class);
+        list.add("断点续传");
+        classes.add(BreakpointResumeActivity.class);
     }
 
     public static boolean isAPPALive(Context mContext, String packageName) {
