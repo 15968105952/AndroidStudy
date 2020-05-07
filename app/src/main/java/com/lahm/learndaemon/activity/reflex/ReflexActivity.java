@@ -8,8 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.gson.reflect.TypeToken;
 import com.lahm.learndaemon.R;
 import com.lahm.learndaemon.activity.BaseActivity;
+import com.lahm.learndaemon.entity.TestBean;
+import com.lahm.learndaemon.utils.GsonUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -31,6 +34,13 @@ public class ReflexActivity extends BaseActivity {
         getAndSetAge();
         //未成功，show方法无法反射调用
         showToast();
+        String httpResult="{\"success\":true,\"statusCode\":\"0\",\"errorMsg\":null,\"msg\":null,\"content\":[{\"courseLessonId\":411393,\"courseLessonSn\":null,\"courseLessonName\":\"课次1\",\"broadcastRoomId\":null,\"startDate\":null,\"startTime\":\"2020-04-01 14:25:00\",\"endTime\":\"2020-04-01 17:25:00\",\"courseGenseeId\":null,\"courseVideoId\":null,\"roomId\":null,\"teacherId\":null,\"status\":1,\"orderNum\":null,\"createBy\":null,\"createTime\":\"2020-04-01 14:11:38\",\"updateBy\":null,\"updateTime\":null,\"isdelete\":null,\"courseId\":410602,\"courseStatus\":null,\"assistantToken\":null,\"studentToken\":null,\"teacherToken\":null,\"studentClientToken\":null,\"teacherJoinUrl\":null,\"studentJoinUrl\":null,\"masterTeacher\":\"颜雯雅\",\"assistantName\":null,\"defaultVideo\":null,\"mp4\":null,\"vid\":null,\"genseeStatus\":null,\"teachingMethod\":2,\"roomUrl\":null,\"viewTime\":null,\"findType\":null,\"courseName\":null,\"subjectId\":null,\"backLook\":false,\"roomStatus\":2,\"playBackList\":null,\"recordVideoList\":null,\"studentCode\":null},{\"courseLessonId\":411394,\"courseLessonSn\":null,\"courseLessonName\":\"课次2\",\"broadcastRoomId\":null,\"startDate\":null,\"startTime\":\"2020-04-02 14:25:00\",\"endTime\":\"2020-04-02 17:25:00\",\"courseGenseeId\":null,\"courseVideoId\":null,\"roomId\":null,\"teacherId\":null,\"status\":1,\"orderNum\":null,\"createBy\":null,\"createTime\":\"2020-04-01 14:11:38\",\"updateBy\":null,\"updateTime\":null,\"isdelete\":null,\"courseId\":410602,\"courseStatus\":null,\"assistantToken\":null,\"studentToken\":null,\"teacherToken\":null,\"studentClientToken\":null,\"teacherJoinUrl\":null,\"studentJoinUrl\":null,\"masterTeacher\":\"颜雯雅\",\"assistantName\":null,\"defaultVideo\":null,\"mp4\":null,\"vid\":null,\"genseeStatus\":null,\"teachingMethod\":2,\"roomUrl\":null,\"viewTime\":null,\"findType\":null,\"courseName\":null,\"subjectId\":null,\"backLook\":false,\"roomStatus\":2,\"playBackList\":null,\"recordVideoList\":null,\"studentCode\":null},{\"courseLessonId\":411395,\"courseLessonSn\":null,\"courseLessonName\":\"课次3\",\"broadcastRoomId\":null,\"startDate\":null,\"startTime\":\"2020-04-03 14:25:00\",\"endTime\":\"2020-04-03 17:25:00\",\"courseGenseeId\":null,\"courseVideoId\":null,\"roomId\":null,\"teacherId\":null,\"status\":1,\"orderNum\":null,\"createBy\":null,\"createTime\":\"2020-04-01 14:11:38\",\"updateBy\":null,\"updateTime\":null,\"isdelete\":null,\"courseId\":410602,\"courseStatus\":null,\"assistantToken\":null,\"studentToken\":null,\"teacherToken\":null,\"studentClientToken\":null,\"teacherJoinUrl\":null,\"studentJoinUrl\":null,\"masterTeacher\":\"颜雯雅\",\"assistantName\":null,\"defaultVideo\":null,\"mp4\":null,\"vid\":null,\"genseeStatus\":null,\"teachingMethod\":2,\"roomUrl\":null,\"viewTime\":null,\"findType\":null,\"courseName\":null,\"subjectId\":null,\"backLook\":false,\"roomStatus\":2,\"playBackList\":null,\"recordVideoList\":null,\"studentCode\":null},{\"courseLessonId\":411396,\"courseLessonSn\":null,\"courseLessonName\":\"课次4\",\"broadcastRoomId\":null,\"startDate\":null,\"startTime\":\"2020-04-04 14:25:00\",\"endTime\":\"2020-04-04 17:25:00\",\"courseGenseeId\":null,\"courseVideoId\":null,\"roomId\":null,\"teacherId\":null,\"status\":1,\"orderNum\":null,\"createBy\":null,\"createTime\":\"2020-04-01 14:11:38\",\"updateBy\":null,\"updateTime\":null,\"isdelete\":null,\"courseId\":410602,\"courseStatus\":null,\"assistantToken\":null,\"studentToken\":null,\"teacherToken\":null,\"studentClientToken\":null,\"teacherJoinUrl\":null,\"studentJoinUrl\":null,\"masterTeacher\":\"颜雯雅\",\"assistantName\":null,\"defaultVideo\":null,\"mp4\":null,\"vid\":null,\"genseeStatus\":null,\"teachingMethod\":2,\"roomUrl\":null,\"viewTime\":null,\"findType\":null,\"courseName\":null,\"subjectId\":null,\"backLook\":false,\"roomStatus\":2,\"playBackList\":null,\"recordVideoList\":null,\"studentCode\":null}],\"totalCount\":null}";
+        TestBean resultBean = GsonUtil.fromJson(
+                httpResult,  // 这里需要将获取到的json再次进行格式化
+                new TypeToken<TestBean>() {
+                });
+//        TestBean  resultBean = new Gson().fromJson(httpResult, TestBean.class);
+        Toast.makeText(ReflexActivity.this,resultBean.getContent().get(0).getCourseLessonName(),Toast.LENGTH_SHORT).show();
 
     }
 
