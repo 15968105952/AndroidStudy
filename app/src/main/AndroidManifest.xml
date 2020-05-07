@@ -56,6 +56,12 @@
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+        <!-- Gson兼容后台数据类型返回不一致 -->
+        <activity
+            android:name=".activity.GsonActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -71,6 +71,8 @@ public class MainActivity extends BaseActivity {
         classes.add(BreakpointResumeActivity.class);
         list.add("反射");
         classes.add(ReflexActivity.class);
+        list.add("Gson兼容后台数据返回类型不一致");
+        classes.add(GsonActivity.class);
     }
 
     public static boolean isAPPALive(Context mContext, String packageName) {
