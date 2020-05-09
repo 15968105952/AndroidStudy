@@ -10,7 +10,6 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.lahm.learndaemon.R;
 import com.lahm.learndaemon.activity.reflex.Person;
-import com.lahm.learndaemon.entity.MyGsonSyntaxErrorListener;
 import com.lahm.learndaemon.entity.TestBean;
 
 import java.lang.reflect.Field;
@@ -27,17 +26,16 @@ public class GsonActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gson);
-        MyGsonSyntaxErrorListener.start();
 
     }
 
     public void reflex(View view) {
         //测试gson解析
-        TestGson();
+        testGson();
 
     }
 
-    private void TestGson() {
+    private void testGson() {
         TestBean innerBean = new TestBean();
         innerBean.age = 18;
         innerBean.name = "test1";
@@ -64,6 +62,7 @@ public class GsonActivity extends BaseActivity {
 
         TestBean resultBean = new Gson().fromJson(testStr, TestBean.class);
         Log.d("test", "result bean: " + resultBean);
+        Toast.makeText(GsonActivity.this,String.valueOf(resultBean.name),Toast.LENGTH_SHORT).show();
     }
 
     private void getAndSetAge() {
