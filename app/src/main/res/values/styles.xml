@@ -20,4 +20,10 @@
         <item name="android:windowDisablePreview">true</item>
         <item name="android:windowNoDisplay">false</item>
     </style>
+
+    <declare-styleable name="ScoreTrend">
+        <attr name="max_score" format="integer"/>
+        <attr name="min_score" format="integer"/>
+        <attr name="broken_line_color" format="color"/>
+    </declare-styleable>
 </resources>

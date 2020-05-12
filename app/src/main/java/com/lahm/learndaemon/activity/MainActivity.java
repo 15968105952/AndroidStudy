@@ -73,6 +73,8 @@ public class MainActivity extends BaseActivity {
         classes.add(ReflexActivity.class);
         list.add("Gson兼容后台数据返回类型不一致");
         classes.add(GsonActivity.class);
+        list.add("自定义坐标轴记录");
+        classes.add(AxisRecordActivity.class);
     }
 
     public static boolean isAPPALive(Context mContext, String packageName) {

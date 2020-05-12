@@ -8,4 +8,9 @@
     <color name="color_ffffffff">#ffffffff</color>
     <color name="color_993c2e4c">#993c2e4c</color>
     <color name="color_337239ff">#337239ff</color>
+    <color name="color_text_999">#999999</color>
+    <color name="color_red10">#10F5222D</color>
+    <color name="color_red20">#20F5222D</color>
+    <color name="color_red">#F5222D</color>
+    <color name="app_color">#2C8CFF</color>
 </resources>
