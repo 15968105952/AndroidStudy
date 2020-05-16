@@ -20,5 +20,10 @@
             android:id="@+id/tv_switch"
             android:text="自定义开关"
             style="@style/item_textview"></TextView>
+
+        <TextView
+            android:id="@+id/tv_water_ripple"
+            android:text="自定义水波纹"
+            style="@style/item_textview"></TextView>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

@@ -81,6 +81,12 @@
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+        <!-- 水波纹自定义控件 -->
+        <activity
+            android:name=".activity.WaterRippleActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

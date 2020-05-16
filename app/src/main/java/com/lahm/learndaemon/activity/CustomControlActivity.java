@@ -27,7 +27,7 @@ public class CustomControlActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.tv_axisRecord, R.id.tv_switch})
+    @OnClick({R.id.tv_axisRecord, R.id.tv_switch, R.id.tv_water_ripple})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_axisRecord:
@@ -35,6 +35,9 @@ public class CustomControlActivity extends BaseActivity {
                 break;
             case R.id.tv_switch:
                 startActivity(SwitchActivity.class);
+                break;
+            case R.id.tv_water_ripple:
+                startActivity(WaterRippleActivity.class);
                 break;
         }
     }
