@@ -77,4 +77,9 @@
         <attr name="countTextDownSize" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="SwitchView">
+        <attr name="slideButton" format="reference"/>
+        <attr name="switchBackground" format="reference" />
+    </declare-styleable>
+
 </resources>

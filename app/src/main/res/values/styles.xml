@@ -26,4 +26,17 @@
         <attr name="min_score" format="integer"/>
         <attr name="broken_line_color" format="color"/>
     </declare-styleable>
+
+    <!--每个条目的textview-->
+    <style name="item_textview" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/shape_recharge_background</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
 </resources>

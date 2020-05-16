@@ -21,9 +21,9 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private List<String>  list=new ArrayList<>();
-    private List<ImpressTagEntity>  impressTagEntities=new ArrayList<>();
-    private List<Class<? extends BaseActivity>> classes=new ArrayList<>();
+    private List<String> list = new ArrayList<>();
+    private List<ImpressTagEntity> impressTagEntities = new ArrayList<>();
+    private List<Class<? extends BaseActivity>> classes = new ArrayList<>();
     private TagFlowLayout tag_flow_layout;
     private TextTagAdapter textTagAdapter;
 
@@ -39,22 +39,22 @@ public class MainActivity extends BaseActivity {
 
     private void addBean() {
         for (int i = 0; i < list.size(); i++) {
-            ImpressTagEntity impressTagEntity=new ImpressTagEntity();
+            ImpressTagEntity impressTagEntity = new ImpressTagEntity();
             impressTagEntity.setEnName(list.get(i));
             impressTagEntities.add(impressTagEntity);
         }
-        if(null!=impressTagEntities&&impressTagEntities.size()>0)
-        Log.i(TAG,impressTagEntities.size()+"");
+        if (null != impressTagEntities && impressTagEntities.size() > 0)
+            Log.i(TAG, impressTagEntities.size() + "");
         textTagAdapter.notifyDataChanged();
     }
 
     private void setAdapter() {
-        textTagAdapter = new TextTagAdapter(MainActivity.this,impressTagEntities);
+        textTagAdapter = new TextTagAdapter(MainActivity.this, impressTagEntities);
         tag_flow_layout.setAdapter(textTagAdapter);
         tag_flow_layout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
             @Override
             public boolean onTagClick(View view, int position, TaoFlowLayout parent) {
-                startActivity(new Intent(MainActivity.this,classes.get(position)));
+                startActivity(new Intent(MainActivity.this, classes.get(position)));
                 return false;
             }
         });
@@ -73,8 +73,8 @@ public class MainActivity extends BaseActivity {
         classes.add(ReflexActivity.class);
         list.add("Gson兼容后台数据返回类型不一致");
         classes.add(GsonActivity.class);
-        list.add("自定义坐标轴记录");
-        classes.add(AxisRecordActivity.class);
+        list.add("自定义控件");
+        classes.add(CustomControlActivity.class);
     }
 
     public static boolean isAPPALive(Context mContext, String packageName) {
