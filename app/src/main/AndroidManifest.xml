@@ -87,6 +87,12 @@
             android:configChanges="keyboardHidden|orientation|locale"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+        <!-- 轮播图自定义控件 -->
+        <activity
+            android:name=".activity.RotationChartActivity"
+            android:configChanges="keyboardHidden|orientation|locale"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
