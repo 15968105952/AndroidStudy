@@ -30,5 +30,10 @@
             android:id="@+id/tv_rotation_chart"
             android:text="自定义轮播图"
             style="@style/item_textview"></TextView>
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:text="自定义进度条"
+            style="@style/item_textview"></TextView>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

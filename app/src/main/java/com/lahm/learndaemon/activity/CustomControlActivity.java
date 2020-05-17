@@ -18,16 +18,20 @@ public class CustomControlActivity extends BaseActivity {
     TextView tvAxisRecord;
     @BindView(R.id.tv_switch)
     TextView tvSwitch;
+    @BindView(R.id.tv_water_ripple)
+    TextView tvWaterRipple;
+    @BindView(R.id.tv_rotation_chart)
+    TextView tvRotationChart;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_control);
         ButterKnife.bind(this);
-
     }
 
-    @OnClick({R.id.tv_axisRecord, R.id.tv_switch, R.id.tv_water_ripple, R.id.tv_rotation_chart})
+    @OnClick({R.id.tv_axisRecord, R.id.tv_switch, R.id.tv_water_ripple, R.id.tv_rotation_chart,
+    R.id.tv_progress})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_axisRecord:
@@ -41,6 +45,9 @@ public class CustomControlActivity extends BaseActivity {
                 break;
             case R.id.tv_rotation_chart:
                 startActivity(RotationChartActivity.class);
+                break;
+            case R.id.tv_progress:
+                startActivity(ProgressActivity.class);
                 break;
         }
     }
