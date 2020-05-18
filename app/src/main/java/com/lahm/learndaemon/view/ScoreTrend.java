@@ -180,6 +180,7 @@ public class ScoreTrend extends View {
         drawText(canvas);
         //绘制折线
         drawBrokenLine(canvas);
+        //绘制折线穿过的点
         drawPoint(canvas);
 
 

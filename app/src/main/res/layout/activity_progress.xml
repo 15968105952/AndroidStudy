@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <com.lahm.learndaemon.view.CircleProgress
         android:id="@+id/progress"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/color_FF0444"
         android:textSize="@dimen/text_15"
-        android:layout_centerHorizontal="true"
 
         ></com.lahm.learndaemon.view.CircleProgress>
+
+    <TextView
+        android:id="@+id/tv_start"
+        style="@style/item_textview"
+        android:text="开始"></TextView>
+
+    <TextView
+        android:id="@+id/tv_pause"
+        style="@style/item_textview"
+        android:text="暂定"></TextView>
+
 </LinearLayout>

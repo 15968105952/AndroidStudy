@@ -75,6 +75,8 @@ public class MainActivity extends BaseActivity {
         classes.add(GsonActivity.class);
         list.add("自定义控件");
         classes.add(CustomControlActivity.class);
+        list.add("多线程");
+        classes.add(MultithreadingActivity.class);
     }
 
     public static boolean isAPPALive(Context mContext, String packageName) {

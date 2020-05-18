@@ -24,12 +24,12 @@ import java.util.TimerTask;
  * Description: 圆形进度条
  */
 public class CircleProgress extends AppCompatTextView {
-   Handler handler=new android.os.Handler(){
-       @Override
-       public void handleMessage(Message msg) {
-           invalidate();
-       }
-       };
+    Handler handler = new android.os.Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            invalidate();
+        }
+    };
 
     public CircleProgress(Context context) {
         super(context);
@@ -80,6 +80,10 @@ public class CircleProgress extends AppCompatTextView {
         int height = getHeight();
         int cX = width / 2;
         int cY = height / 2;
+      /* 半径radiu是在中间，边框ring_width我们可以想象是从圆外添加一半ring_width/2，
+         再向圆内填充一半ring_width/2：radis_point为进度圆的半径，这样写半径可以使控件
+         充满全屏，同时四边不会展示不全
+         */
         int radiu = cX - radis_point - ring_width / 2;
         //画环背景
         mProgressPaint.setColor(progressBgColor);
@@ -102,8 +106,11 @@ public class CircleProgress extends AppCompatTextView {
 
         //画 文字
         txt_progress = progress + "″";
+        //得到字符串的长度
         float textW = mTextPaint.measureText(txt_progress);
+        //得到字符串的高度
         float textH = (mTextPaint.getFontMetrics().descent - mTextPaint.getFontMetrics().ascent) / 2;
+        //确定字体居中
         float textX = width / 2 - textW / 2;
         float textY = height / 2 + textH / 2;
 
@@ -130,7 +137,7 @@ public class CircleProgress extends AppCompatTextView {
             @Override
             public void run() {
                 if (progress >= MAX_PROGRESS) {
-                    if(listener!=null)listener.onMaxProgress();
+                    if (listener != null) listener.onMaxProgress();
                     stop();
                     return;
                 }
@@ -185,19 +192,19 @@ public class CircleProgress extends AppCompatTextView {
         timerTask = null;
         if (timer != null) timer.cancel();
         timer = null;
-        if(null!=handler){
+        if (null != handler) {
             handler.removeMessages(100);
-            handler=null;
+            handler = null;
         }
     }
 
-    private onProgressListener listener ;
+    private onProgressListener listener;
 
     public void setOnProgressListener(onProgressListener listener) {
         this.listener = listener;
     }
 
-    public interface onProgressListener{
+    public interface onProgressListener {
         void onMaxProgress();
 
     }
