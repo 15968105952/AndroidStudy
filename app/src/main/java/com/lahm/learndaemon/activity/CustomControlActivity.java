@@ -30,12 +30,15 @@ public class CustomControlActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.tv_axisRecord, R.id.tv_switch, R.id.tv_water_ripple, R.id.tv_rotation_chart,
-    R.id.tv_progress})
+    @OnClick({R.id.tv_axisRecord, R.id.tv_axisRecordnew, R.id.tv_switch, R.id.tv_water_ripple, R.id.tv_rotation_chart,
+            R.id.tv_progress})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_axisRecord:
                 startActivity(AxisRecordActivity.class);
+                break;
+            case R.id.tv_axisRecordnew:
+                startActivity(AxisRecordForCePingActivity.class);
                 break;
             case R.id.tv_switch:
                 startActivity(SwitchActivity.class);
